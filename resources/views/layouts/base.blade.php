@@ -7,8 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Home</title>
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico">
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400italic,700,700italic,900,900italic&amp;subset=latin,latin-ext" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Open%20Sans:300,400,400italic,600,600italic,700,700italic&amp;subset=latin,latin-ext" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css?family=Lato:300,400,400italic,700,700italic,900,900italic&amp;subset=latin,latin-ext"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css?family=Open%20Sans:300,400,400italic,600,600italic,700,700italic&amp;subset=latin,latin-ext"
+        rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/animate.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/font-awesome.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/bootstrap.min.css') }}">
@@ -39,7 +43,8 @@
                         <div class="topbar-menu left-menu">
                             <ul>
                                 <li class="menu-item">
-                                    <a title="Hotline: (+123) 456 789" href="#"><span class="icon label-before fa fa-mobile"></span>Hotline: (+123) 456 789</a>
+                                    <a title="Hotline: (+123) 456 789" href="#"><span
+                                            class="icon label-before fa fa-mobile"></span>Hotline: (+123) 456 789</a>
                                 </li>
                             </ul>
                         </div>
@@ -47,12 +52,23 @@
                             <ul>
 
                                 <li class="menu-item lang-menu menu-item-has-children parent">
-                                    <a title="English" href="#"><span class="img label-before"><img src="{{ asset('assets/images/lang-en.png') }}" alt="lang-en"></span>English<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                                    <a title="English" href="#"><span class="img label-before"><img
+                                                src="{{ asset('assets/images/lang-en.png') }}"
+                                                alt="lang-en"></span>English<i class="fa fa-angle-down"
+                                            aria-hidden="true"></i></a>
                                     <ul class="submenu lang">
-                                        <li class="menu-item"><a title="hungary" href="#"><span class="img label-before"><img src="assets/images/lang-hun.png" alt="lang-hun"></span>Hungary</a></li>
-                                        <li class="menu-item"><a title="german" href="#"><span class="img label-before"><img src="assets/images/lang-ger.png" alt="lang-ger"></span>German</a></li>
-                                        <li class="menu-item"><a title="french" href="#"><span class="img label-before"><img src="assets/images/lang-fra.png" alt="lang-fre"></span>French</a></li>
-                                        <li class="menu-item"><a title="canada" href="#"><span class="img label-before"><img src="assets/images/lang-can.png" alt="lang-can"></span>Canada</a></li>
+                                        <li class="menu-item"><a title="hungary" href="#"><span
+                                                    class="img label-before"><img src="assets/images/lang-hun.png"
+                                                        alt="lang-hun"></span>Hungary</a></li>
+                                        <li class="menu-item"><a title="german" href="#"><span
+                                                    class="img label-before"><img src="assets/images/lang-ger.png"
+                                                        alt="lang-ger"></span>German</a></li>
+                                        <li class="menu-item"><a title="french" href="#"><span
+                                                    class="img label-before"><img src="assets/images/lang-fra.png"
+                                                        alt="lang-fre"></span>French</a></li>
+                                        <li class="menu-item"><a title="canada" href="#"><span
+                                                    class="img label-before"><img src="assets/images/lang-can.png"
+                                                        alt="lang-can"></span>Canada</a></li>
                                     </ul>
                                 </li>
 
@@ -63,14 +79,16 @@
 
                                 @if(Auth::user()->utype === 'ADM')
                                 <li class="menu-item menu-item-has-children parent">
-                                    <a title="" href="#"> My Account {{Auth::user()->name}}<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                                    <a title="" href="#"> My Account {{Auth::user()->name}}<i class="fa fa-angle-down"
+                                            aria-hidden="true"></i></a>
                                     <ul class="submenu curency">
                                         <li class="menu-item">
                                             <a title="" href="{{route('admin.dashboard')}}">Dashboard</a>
                                         </li>
 
                                         <li class="menu-item">
-                                            <a href="{{ route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                                            <a href="{{ route('logout')}}"
+                                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
 
                                         </li>
 
@@ -84,14 +102,16 @@
 
                                 @else
                                 <li class="menu-item menu-item-has-children parent">
-                                    <a title="" href="#"> My Account {{Auth::user()->name}}<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                                    <a title="" href="#"> My Account {{Auth::user()->name}}<i class="fa fa-angle-down"
+                                            aria-hidden="true"></i></a>
                                     <ul class="submenu curency">
                                         <li class="menu-item">
                                             <a title="" href="{{route('user.dashboard')}}">Dashboard</a>
                                         </li>
 
                                         <li class="menu-item">
-                                            <a href="{{ route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                                            <a href="{{ route('logout')}}"
+                                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
 
                                         </li>
 
@@ -106,7 +126,8 @@
                                 @endif
                                 @else
                                 <li class="menu-item"><a title="Register or Login" href="{{'login'}}">Login</a></li>
-                                <li class="menu-item"><a title="Register or Login" href="{{'register'}}">Register</a></li>
+                                <li class="menu-item"><a title="Register or Login" href="{{'register'}}">Register</a>
+                                </li>
 
                                 @endif
 
@@ -120,14 +141,16 @@
                     <div class="mid-section main-info-area">
 
                         <div class="wrap-logo-top left-section">
-                            <a href="index.html" class="link-to-home"><img src="{{ asset('assets/images/logo-top-1.png') }}" alt="mercado"></a>
+                            <a href="index.html" class="link-to-home"><img
+                                    src="{{ asset('assets/images/logo-top-1.png') }}" alt="mercado"></a>
                         </div>
 
                         <div class="wrap-search center-section">
                             <div class="wrap-search-form">
                                 <form action="#" id="form-search-top" name="form-search-top">
                                     <input type="text" name="search" value="" placeholder="Search here...">
-                                    <button form="form-search-top" type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
+                                    <button form="form-search-top" type="button"><i class="fa fa-search"
+                                            aria-hidden="true"></i></button>
                                     <div class="wrap-list-cate">
                                         <input type="hidden" name="product-cate" value="0" id="product-cate">
                                         <a href="#" class="link-control">All Category</a>
@@ -173,7 +196,7 @@
                                         <span class="index">{{Cart::count()}} items</span>
                                         @endif
                                         <span class="title">CART</span>
-                                        
+
                                     </div>
                                 </a>
                             </div>
@@ -193,11 +216,16 @@
                     <div class="header-nav-section">
                         <div class="container">
                             <ul class="nav menu-nav clone-main-menu" id="mercado_haead_menu" data-menuname="Sale Info">
-                                <li class="menu-item"><a href="#" class="link-term">Weekly Featured</a><span class="nav-label hot-label">hot</span></li>
-                                <li class="menu-item"><a href="#" class="link-term">Hot Sale items</a><span class="nav-label hot-label">hot</span></li>
-                                <li class="menu-item"><a href="#" class="link-term">Top new items</a><span class="nav-label hot-label">hot</span></li>
-                                <li class="menu-item"><a href="#" class="link-term">Top Selling</a><span class="nav-label hot-label">hot</span></li>
-                                <li class="menu-item"><a href="#" class="link-term">Top rated items</a><span class="nav-label hot-label">hot</span></li>
+                                <li class="menu-item"><a href="#" class="link-term">Weekly Featured</a><span
+                                        class="nav-label hot-label">hot</span></li>
+                                <li class="menu-item"><a href="#" class="link-term">Hot Sale items</a><span
+                                        class="nav-label hot-label">hot</span></li>
+                                <li class="menu-item"><a href="#" class="link-term">Top new items</a><span
+                                        class="nav-label hot-label">hot</span></li>
+                                <li class="menu-item"><a href="#" class="link-term">Top Selling</a><span
+                                        class="nav-label hot-label">hot</span></li>
+                                <li class="menu-item"><a href="#" class="link-term">Top rated items</a><span
+                                        class="nav-label hot-label">hot</span></li>
                             </ul>
                         </div>
                     </div>
@@ -206,7 +234,8 @@
                         <div class="container">
                             <ul class="nav primary clone-main-menu" id="mercado_main" data-menuname="Main menu">
                                 <li class="menu-item home-icon">
-                                    <a href="/" class="link-term mercado-item-title"><i class="fa fa-home" aria-hidden="true"></i></a>
+                                    <a href="/" class="link-term mercado-item-title"><i class="fa fa-home"
+                                            aria-hidden="true"></i></a>
                                 </li>
                                 <li class="menu-item">
                                     <a href="about-us.html" class="link-term mercado-item-title">About Us</a>
@@ -290,7 +319,8 @@
                                         <ul>
                                             <li>
                                                 <i class="fa fa-map-marker" aria-hidden="true"></i>
-                                                <p class="contact-txt">45 Grand Central Terminal New York,NY 1017 United State USA</p>
+                                                <p class="contact-txt">45 Grand Central Terminal New York,NY 1017 United
+                                                    State USA</p>
                                             </li>
                                             <li>
                                                 <i class="fa fa-phone" aria-hidden="true"></i>
@@ -323,7 +353,8 @@
                                 <div class="item-content">
                                     <div class="wrap-newletter-footer">
                                         <form action="#" class="frm-newletter" id="frm-newletter">
-                                            <input type="email" class="input-email" name="email" value="" placeholder="Enter your email address">
+                                            <input type="email" class="input-email" name="email" value=""
+                                                placeholder="Enter your email address">
                                             <button class="btn-submit">Subscribe</button>
                                         </form>
                                     </div>
@@ -341,7 +372,8 @@
                                             <ul>
                                                 <li class="menu-item"><a href="#" class="link-term">My Account</a></li>
                                                 <li class="menu-item"><a href="#" class="link-term">Brands</a></li>
-                                                <li class="menu-item"><a href="#" class="link-term">Gift Certificates</a></li>
+                                                <li class="menu-item"><a href="#" class="link-term">Gift
+                                                        Certificates</a></li>
                                                 <li class="menu-item"><a href="#" class="link-term">Affiliates</a></li>
                                                 <li class="menu-item"><a href="#" class="link-term">Wish list</a></li>
                                             </ul>
@@ -357,7 +389,8 @@
                                                 <li class="menu-item"><a href="#" class="link-term">Returns</a></li>
                                                 <li class="menu-item"><a href="#" class="link-term">Site Map</a></li>
                                                 <li class="menu-item"><a href="#" class="link-term">Specials</a></li>
-                                                <li class="menu-item"><a href="#" class="link-term">Order History</a></li>
+                                                <li class="menu-item"><a href="#" class="link-term">Order History</a>
+                                                </li>
                                             </ul>
                                         </div>
                                     </div>
@@ -386,11 +419,16 @@
                                 <div class="item-content">
                                     <div class="wrap-list-item social-network">
                                         <ul>
-                                            <li><a href="#" class="link-to-item" title="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                            <li><a href="#" class="link-to-item" title="facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                            <li><a href="#" class="link-to-item" title="pinterest"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
-                                            <li><a href="#" class="link-to-item" title="instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                                            <li><a href="#" class="link-to-item" title="vimeo"><i class="fa fa-vimeo" aria-hidden="true"></i></a></li>
+                                            <li><a href="#" class="link-to-item" title="twitter"><i
+                                                        class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                            <li><a href="#" class="link-to-item" title="facebook"><i
+                                                        class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                            <li><a href="#" class="link-to-item" title="pinterest"><i
+                                                        class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+                                            <li><a href="#" class="link-to-item" title="instagram"><i
+                                                        class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                            <li><a href="#" class="link-to-item" title="vimeo"><i class="fa fa-vimeo"
+                                                        aria-hidden="true"></i></a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -404,10 +442,15 @@
                                     <div class="wrap-list-item apps-list">
                                         <ul>
                                             <li><a href="#" class="link-to-item" title="our application on apple store">
-                                                    <figure><img src="{{ asset('assets/images/brands/apple-store.png') }}" alt="apple store" width="128" height="36"></figure>
+                                                    <figure><img
+                                                            src="{{ asset('assets/images/brands/apple-store.png') }}"
+                                                            alt="apple store" width="128" height="36"></figure>
                                                 </a></li>
-                                            <li><a href="#" class="link-to-item" title="our application on google play store">
-                                                    <figure><img src="{{ asset('assets/images/brands/google-play-store.png') }}" alt="google play store" width="128" height="36"></figure>
+                                            <li><a href="#" class="link-to-item"
+                                                    title="our application on google play store">
+                                                    <figure><img
+                                                            src="{{ asset('assets/images/brands/google-play-store.png') }}"
+                                                            alt="google play store" width="128" height="36"></figure>
                                                 </a></li>
                                         </ul>
                                     </div>
@@ -427,40 +470,64 @@
                                     <li><span class="row-title">Mobiles:</span></li>
                                     <li><a href="#" class="redirect-back-link" title="mobile">Mobiles</a></li>
                                     <li><a href="#" class="redirect-back-link" title="yphones">YPhones</a></li>
-                                    <li><a href="#" class="redirect-back-link" title="Gianee Mobiles GL">Gianee Mobiles GL</a></li>
-                                    <li><a href="#" class="redirect-back-link" title="Mobiles Karbonn">Mobiles Karbonn</a></li>
-                                    <li><a href="#" class="redirect-back-link" title="Mobiles Viva">Mobiles Viva</a></li>
-                                    <li><a href="#" class="redirect-back-link" title="Mobiles Intex">Mobiles Intex</a></li>
-                                    <li><a href="#" class="redirect-back-link" title="Mobiles Micrumex">Mobiles Micrumex</a></li>
-                                    <li><a href="#" class="redirect-back-link" title="Mobiles Bsus">Mobiles Bsus</a></li>
-                                    <li><a href="#" class="redirect-back-link" title="Mobiles Samsyng">Mobiles Samsyng</a></li>
-                                    <li><a href="#" class="redirect-back-link" title="Mobiles Lenova">Mobiles Lenova</a></li>
+                                    <li><a href="#" class="redirect-back-link" title="Gianee Mobiles GL">Gianee Mobiles
+                                            GL</a></li>
+                                    <li><a href="#" class="redirect-back-link" title="Mobiles Karbonn">Mobiles
+                                            Karbonn</a></li>
+                                    <li><a href="#" class="redirect-back-link" title="Mobiles Viva">Mobiles Viva</a>
+                                    </li>
+                                    <li><a href="#" class="redirect-back-link" title="Mobiles Intex">Mobiles Intex</a>
+                                    </li>
+                                    <li><a href="#" class="redirect-back-link" title="Mobiles Micrumex">Mobiles
+                                            Micrumex</a></li>
+                                    <li><a href="#" class="redirect-back-link" title="Mobiles Bsus">Mobiles Bsus</a>
+                                    </li>
+                                    <li><a href="#" class="redirect-back-link" title="Mobiles Samsyng">Mobiles
+                                            Samsyng</a></li>
+                                    <li><a href="#" class="redirect-back-link" title="Mobiles Lenova">Mobiles Lenova</a>
+                                    </li>
                                 </ul>
 
                                 <ul class="list-back-link">
                                     <li><span class="row-title">Tablets:</span></li>
                                     <li><a href="#" class="redirect-back-link" title="Plesc YPads">Plesc YPads</a></li>
-                                    <li><a href="#" class="redirect-back-link" title="Samsyng Tablets">Samsyng Tablets</a></li>
-                                    <li><a href="#" class="redirect-back-link" title="Qindows Tablets">Qindows Tablets</a></li>
-                                    <li><a href="#" class="redirect-back-link" title="Calling Tablets">Calling Tablets</a></li>
-                                    <li><a href="#" class="redirect-back-link" title="Micrumex Tablets">Micrumex Tablets</a></li>
-                                    <li><a href="#" class="redirect-back-link" title="Lenova Tablets Bsus">Lenova Tablets Bsus</a></li>
-                                    <li><a href="#" class="redirect-back-link" title="Tablets iBall">Tablets iBall</a></li>
-                                    <li><a href="#" class="redirect-back-link" title="Tablets Swipe">Tablets Swipe</a></li>
-                                    <li><a href="#" class="redirect-back-link" title="Tablets TVs, Audio">Tablets TVs, Audio</a></li>
+                                    <li><a href="#" class="redirect-back-link" title="Samsyng Tablets">Samsyng
+                                            Tablets</a></li>
+                                    <li><a href="#" class="redirect-back-link" title="Qindows Tablets">Qindows
+                                            Tablets</a></li>
+                                    <li><a href="#" class="redirect-back-link" title="Calling Tablets">Calling
+                                            Tablets</a></li>
+                                    <li><a href="#" class="redirect-back-link" title="Micrumex Tablets">Micrumex
+                                            Tablets</a></li>
+                                    <li><a href="#" class="redirect-back-link" title="Lenova Tablets Bsus">Lenova
+                                            Tablets Bsus</a></li>
+                                    <li><a href="#" class="redirect-back-link" title="Tablets iBall">Tablets iBall</a>
+                                    </li>
+                                    <li><a href="#" class="redirect-back-link" title="Tablets Swipe">Tablets Swipe</a>
+                                    </li>
+                                    <li><a href="#" class="redirect-back-link" title="Tablets TVs, Audio">Tablets TVs,
+                                            Audio</a></li>
                                 </ul>
 
                                 <ul class="list-back-link">
                                     <li><span class="row-title">Fashion:</span></li>
                                     <li><a href="#" class="redirect-back-link" title="Sarees Silk">Sarees Silk</a></li>
-                                    <li><a href="#" class="redirect-back-link" title="sarees Salwar">sarees Salwar</a></li>
-                                    <li><a href="#" class="redirect-back-link" title="Suits Lehengas">Suits Lehengas</a></li>
-                                    <li><a href="#" class="redirect-back-link" title="Biba Jewellery">Biba Jewellery</a></li>
-                                    <li><a href="#" class="redirect-back-link" title="Rings Earrings">Rings Earrings</a></li>
-                                    <li><a href="#" class="redirect-back-link" title="Diamond Rings">Diamond Rings</a></li>
-                                    <li><a href="#" class="redirect-back-link" title="Loose Diamond Shoes">Loose Diamond Shoes</a></li>
-                                    <li><a href="#" class="redirect-back-link" title="BootsMen Watches">BootsMen Watches</a></li>
-                                    <li><a href="#" class="redirect-back-link" title="Women Watches">Women Watches</a></li>
+                                    <li><a href="#" class="redirect-back-link" title="sarees Salwar">sarees Salwar</a>
+                                    </li>
+                                    <li><a href="#" class="redirect-back-link" title="Suits Lehengas">Suits Lehengas</a>
+                                    </li>
+                                    <li><a href="#" class="redirect-back-link" title="Biba Jewellery">Biba Jewellery</a>
+                                    </li>
+                                    <li><a href="#" class="redirect-back-link" title="Rings Earrings">Rings Earrings</a>
+                                    </li>
+                                    <li><a href="#" class="redirect-back-link" title="Diamond Rings">Diamond Rings</a>
+                                    </li>
+                                    <li><a href="#" class="redirect-back-link" title="Loose Diamond Shoes">Loose Diamond
+                                            Shoes</a></li>
+                                    <li><a href="#" class="redirect-back-link" title="BootsMen Watches">BootsMen
+                                            Watches</a></li>
+                                    <li><a href="#" class="redirect-back-link" title="Women Watches">Women Watches</a>
+                                    </li>
                                 </ul>
 
                             </div>
@@ -479,9 +546,12 @@
                         <div class="wrap-nav horizontal-nav">
                             <ul>
                                 <li class="menu-item"><a href="about-us.html" class="link-term">About us</a></li>
-                                <li class="menu-item"><a href="privacy-policy.html" class="link-term">Privacy Policy</a></li>
-                                <li class="menu-item"><a href="terms-conditions.html" class="link-term">Terms & Conditions</a></li>
-                                <li class="menu-item"><a href="return-policy.html" class="link-term">Return Policy</a></li>
+                                <li class="menu-item"><a href="privacy-policy.html" class="link-term">Privacy Policy</a>
+                                </li>
+                                <li class="menu-item"><a href="terms-conditions.html" class="link-term">Terms &
+                                        Conditions</a></li>
+                                <li class="menu-item"><a href="return-policy.html" class="link-term">Return Policy</a>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -495,7 +565,7 @@
     <script src="{{ asset('assets/js/jquery-ui-1.12.4.minb8ff.js?ver=1.12.4') }}"></script>
     <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('assets/js/jquery.flexslider.js') }}"></script>
-    <script src="{{ asset('assets/js/chosen.jquery.min.js') }}"></script>
+    {{--     <script src="{{ asset('assets/js/chosen.jquery.min.js') }}"></script> --}}
     <script src="{{ asset('assets/js/owl.carousel.min.js') }}"></script>
     <script src="{{ asset('assets/js/jquery.countdown.min.js') }}"></script>
     <script src="{{ asset('assets/js/jquery.sticky.js') }}"></script>
