@@ -1,0 +1,14 @@
+{
+    "emmet.includeLanguages": {
+        "blade": "html",
+        "blade.php": "html",
+        "php": "html",
+      },
+      "emmet.syntaxProfiles": {
+        "blade": "html",
+        "blade.php": "html",
+        "php": "html",
+      },
+      "emmet.showExpandedAbbreviation": "always"
+    
+}
