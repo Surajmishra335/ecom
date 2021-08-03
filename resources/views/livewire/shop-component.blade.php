@@ -54,10 +54,37 @@
 
                 </div>
                 <!--end wrap shop control-->
+                <style>
+                    .product-wish{
+                        position: absolute;
+                        top: 10%;
+                        left: 0;
+                        z-index: 99;
+                        right: 30px;
+                        text-align: right;
+                        padding-top: 0;
+
+                    }
+                    .product-wish .fa{
+                         color: #cbcbcb;
+                         font-size: 32px;
+
+                    }
+                    .product-wish .fa:hover{
+                        color: #ff7007;
+                    }
+
+                    .fill-heart{
+                        color: #ff7007 !important;
+                    }
+                </style>
 
                 <div class="row">
 
                     <ul class="product-list grid-products equal-container">
+                        @php
+                            $witems = Cart::instance('wishlist')->content()->pluck('id');
+                        @endphp
 
                         @foreach($products as $product)
 
@@ -74,10 +101,19 @@
                                     <a href="{{route('product.details', ['slug' => $product->slug])}}"
                                         class="product-name"><span>{{$product->name}}</span></a>
                                     <div class="wrap-price"><span
-                                            class="product-price">$ {{$product->regular_price}}</span></div>
+                                            class="product-price">₹ {{$product->regular_price}}</span></div>
                                     <a href="#" class="btn add-to-cart"
                                         wire:click.prevent="store({{$product->id}}, '{{$product->name}}', {{$product->regular_price}})">Add
                                         To Cart</a>
+                                    
+                                    <div class="product-wish">
+                                        @if ($witems->contains($product->id))
+                                            <a href="#"><i class="fa fa-heart fill-heart"></i></a>
+                                        @else
+                                            <a href="#" wire:click.prevent="addToWishlist({{$product->id}}, '{{$product->name}}', {{$product->regular_price}})"><i class="fa fa-heart"></i></a>
+                                        @endif
+                                        
+                                    </div>
                                 </div>
                             </div>
                         </li>
@@ -144,7 +180,7 @@
                 </div><!-- brand widget-->
 
                 <div class="widget mercado-widget filter-widget price-filter">
-                    <h2 class="widget-title">Price <span class="text-info">${{$min_price}} - ${{$max_price}}</span></h2>
+                    <h2 class="widget-title">Price <span class="text-info">₹{{$min_price}} - ₹{{$max_price}}</span></h2>
                     <div class="widget-content">
                         <div id="slider" wire:ignore>
 
