@@ -50,7 +50,7 @@ class AdminEditCouponComponent extends Component
         $coupon->type = $this->type;
         $coupon->value = $this->value;
         $coupon->cart_value = $this->cart_value;
-
+        //dd($coupon->type);
         $coupon->save();
 
         session()->flash('message', 'Coupon Has Been Updated Successfully');
