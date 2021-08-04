@@ -111,8 +111,13 @@
                                         </li>
 
                                         <li class="menu-item">
-                                            <a title="Sale Settinf"
+                                            <a title="Sale Setting"
                                                 href="{{route('admin.sale')}}">Sale Setting</a>
+                                        </li>
+
+                                        <li class="menu-item">
+                                            <a title="All coupons"
+                                                href="{{route('admin.coupons')}}">All Coupons</a>
                                         </li>
 
                                         <li class="menu-item">
