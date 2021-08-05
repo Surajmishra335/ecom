@@ -81,6 +81,7 @@
                                 @auth
 
                                 @if(Auth::user()->utype === 'ADM')
+                            
                                 <li class="menu-item menu-item-has-children parent">
                                     <a title="" href="#"> My Account {{Auth::user()->name}}<i class="fa fa-angle-down"
                                             aria-hidden="true"></i></a>
@@ -88,8 +89,13 @@
                                         <li class="menu-item">
                                             <a title="Dashboard" href="{{route('admin.dashboard')}}">Dashboard</a>
                                         </li>
-
                                         <li class="menu-item">
+                                            <a title="Manage Home Category"
+                                                href="{{route('admin.homecategories')}}">Manage Home Categories</a>
+                                        </li>
+
+
+                                        {{-- <li class="menu-item">
                                             <a title="Admin Categories"
                                                 href="{{route('admin.categories')}}">Categories</a>
                                         </li>
@@ -119,7 +125,7 @@
                                             <a title="All coupons"
                                                 href="{{route('admin.coupons')}}">All Coupons</a>
                                         </li>
-
+ --}}
                                         <li class="menu-item">
                                             <a href="{{ route('logout')}}"
                                                 onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
@@ -545,7 +551,7 @@
         </div>
     </footer>
 
-    <script src="{{ asset('assets/js/jquery-1.12.4.minb8ff.js?ver=1.12.4') }}"></script>
+    <script src="{{ asset('assets/js/jquery-1.12.4.minb8ff.js?ver=1.12.4') }}"></scr>
     <script src="{{ asset('assets/js/jquery-ui-1.12.4.minb8ff.js?ver=1.12.4') }}"></script>
     <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('assets/js/jquery.flexslider.js') }}"></script>

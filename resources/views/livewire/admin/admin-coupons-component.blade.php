@@ -1,62 +1,75 @@
-<div>
-    
-    <div class="container" style="padding: 30px 0;">
+<div class="right_col" role="main">
+    <div class="">
+      <div class="clearfix"></div>
+
         <div class="row">
-            <div class="col-md-12">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        @if(Session::has('message'))
-                        {{-- <div class="alert alert-success" role="alert">
-                            {{Session::get('message')}}
-                        </div> --}}
-                        <div class="alert alert-success alert-block">
-                            <button type="button" class="close" data-dismiss="alert">×</button>
-                            <strong>{{ Session::get('message') }}</strong>
-                        </div>
-                        @endif
-                        <div class="row">
-                            <div class="col-md-6">All Coupon</div>
-                            <div class="col-md-6">
-                                <a href="{{route('admin.addcoupon')}}" class="btn btn-primary pull-right">Add New</a>
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                    <div class="x_content">
+                        <div>
+                            <div class="container" style="padding: 30px 0;">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                @if(Session::has('message'))
+                                                {{-- <div class="alert alert-success" role="alert">
+                                                    {{Session::get('message')}}
+                                                </div> --}}
+                                                <div class="alert alert-success alert-block">
+                                                    <button type="button" class="close" data-dismiss="alert">×</button>
+                                                    <strong>{{ Session::get('message') }}</strong>
+                                                </div>
+                                                @endif
+                                                <div class="row">
+                                                    <div class="col-md-6">All Coupon</div>
+                                                    <div class="col-md-6">
+                                                        <a href="{{route('admin.addcoupon')}}" class="btn btn-primary pull-right">Add New</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="panel-body">
+                                                <table class="table table-striped">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>ID</th>
+                                                            <th>Coupon Code</th>
+                                                            <th>Coupon Type</th>
+                                                            <th>Coupon Value</th>
+                                                            <th>Cart Value</th>
+                                                            <th>Expiry Date</th>
+                                                            <th>Actions</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        @foreach ($coupons as $coupon)
+                                                        <tr>
+                                                            <td>{{$coupon->id}}</td>
+                                                            <td>{{$coupon->code}}</td>
+                                                            <td>{{$coupon->type}}</td>
+                                                            @if ($coupon->type == 'fixed')
+                                                                <td>$ {{$coupon->value}}</td>                                       
+                                                            @else
+                                                                <td>{{$coupon->value}} %</td>
+                                                            @endif
+                                                            <td>{{$coupon->cart_value}}</td>
+                                                            <td>{{$coupon->expiry_date}}</td>
+                                                            <td>
+                                                                <a href="{{route('admin.editcoupon',['coupon_id' => $coupon->id])}}"><i class="fa fa-edit fa-2x"></i></a>
+                        
+                                                                <a href="#" onclick="confirm('Are You Sure, You want to delete this category') || event.stopImmediatePropagation()" wire:click.prevent="deleteCoupon({{$coupon->id}})" style="margin-left: 10px;"><i class="fa fa-times fa-2x text-danger"></i></a>
+                                                            </td>
+                                                        </tr>
+                                                        @endforeach
+                                                    </tbody>
+                                                </table>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="panel-body">
-                        <table class="table table-striped">
-                            <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Coupon Code</th>
-                                    <th>Coupon Type</th>
-                                    <th>Coupon Value</th>
-                                    <th>Cart Value</th>
-                                    <th>Expiry Date</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach ($coupons as $coupon)
-                                <tr>
-                                    <td>{{$coupon->id}}</td>
-                                    <td>{{$coupon->code}}</td>
-                                    <td>{{$coupon->type}}</td>
-                                    @if ($coupon->type == 'fixed')
-                                        <td>$ {{$coupon->value}}</td>                                       
-                                    @else
-                                        <td>{{$coupon->value}} %</td>
-                                    @endif
-                                    <td>{{$coupon->cart_value}}</td>
-                                    <td>{{$coupon->expiry_date}}</td>
-                                    <td>
-                                        <a href="{{route('admin.editcoupon',['coupon_id' => $coupon->id])}}"><i class="fa fa-edit fa-2x"></i></a>
-
-                                        <a href="#" onclick="confirm('Are You Sure, You want to delete this category') || event.stopImmediatePropagation()" wire:click.prevent="deleteCoupon({{$coupon->id}})" style="margin-left: 10px;"><i class="fa fa-times fa-2x text-danger"></i></a>
-                                    </td>
-                                </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
-                        
                     </div>
                 </div>
             </div>

@@ -15,6 +15,7 @@ use App\Http\Livewire\Admin\AdminHomeCategoryComponent;
 use App\Http\Livewire\Admin\AdminHomeSliderComponent;
 use App\Http\Livewire\Admin\AdminProductComponent;
 use App\Http\Livewire\Admin\AdminSaleComponent;
+use App\Http\Livewire\Admin\NewAdminHomeComponent;
 use App\Http\Livewire\CartComponent;
 use App\Http\Livewire\CategoryComponent;
 use App\Http\Livewire\CheckoutComponent;
@@ -71,6 +72,7 @@ Route::middleware('auth:sanctum', 'verified', 'authadmin')->group(function () {
     /* dashboard */
 
     Route::get('/admin/dashboard', AdminDashboardComponent::class)->name('admin.dashboard');
+    //Route::get('/admin/dashboard', NewAdminHomeComponent::class)->name('admin.dashboard');
 
     /* category  */
 
