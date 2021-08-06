@@ -73,6 +73,12 @@
                       <li><a href="{{route('admin.homecategories')}}">Manage Home Category</a></li>
                     </ul>
                   </li>
+                  <li><a><i class="fa fa-edit"></i> Home Sider <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="{{route('admin.homeslider')}}">All Slider</a></li>
+                      <li><a href="{{route('admin.addhomeslider')}}">Add New Slider</a></li>
+                    </ul>
+                  </li>
                   <li><a><i class="fa fa-edit"></i> Products <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="{{route('admin.products')}}">All Products</a></li>
