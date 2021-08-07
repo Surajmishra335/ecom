@@ -26,7 +26,7 @@ class Order extends Model
         return $this->hasOne(Shipping::class);
     }
 
-    public function trancation()
+    public function transaction()
     {
         return $this->hasOne(Transaction::class);
     }

@@ -22,8 +22,13 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/color-01.css') }}">
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" integrity="sha512-aEe/ZxePawj0+G2R+AaIxgrQuKT68I28qh+wgLrcAJOz3rxCP+TwrK5SPN+E5I+1IQjNtcfvb96HDagwrKRdBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.7.0/nouislider.min.css" integrity="sha512-40vN6DdyQoxRJCw0klEUwZfTTlcwkOLKpP8K8125hy9iF4fi8gPpWZp60qKC6MYAFaond8yQds7cTMVU8eMbgA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css"
+        integrity="sha512-aEe/ZxePawj0+G2R+AaIxgrQuKT68I28qh+wgLrcAJOz3rxCP+TwrK5SPN+E5I+1IQjNtcfvb96HDagwrKRdBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.7.0/nouislider.min.css"
+        integrity="sha512-40vN6DdyQoxRJCw0klEUwZfTTlcwkOLKpP8K8125hy9iF4fi8gPpWZp60qKC6MYAFaond8yQds7cTMVU8eMbgA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     @livewireStyles
 </head>
 
@@ -81,7 +86,7 @@
                                 @auth
 
                                 @if(Auth::user()->utype === 'ADM')
-                            
+
                                 <li class="menu-item menu-item-has-children parent">
                                     <a title="" href="#"> My Account {{Auth::user()->name}}<i class="fa fa-angle-down"
                                             aria-hidden="true"></i></a>
@@ -89,88 +94,79 @@
                                         <li class="menu-item">
                                             <a title="Dashboard" href="{{route('admin.dashboard')}}">Dashboard</a>
                                         </li>
-                                        <li class="menu-item">
-                                            <a title="Manage Home Category"
-                                                href="{{route('admin.homecategories')}}">Manage Home Categories</a>
-                                        </li>
-
 
                                         {{-- <li class="menu-item">
                                             <a title="Admin Categories"
                                                 href="{{route('admin.categories')}}">Categories</a>
-                                        </li>
-
-                                        <li class="menu-item">
-                                            <a title="Admin Products"
-                                                href="{{route('admin.products')}}"> All 
-                                                Products</a>
-                                        </li>
-
-                                        <li class="menu-item">
-                                            <a title="Admin Sliders"
-                                                href="{{route('admin.homeslider')}}">Manage Home Sliders</a>
-                                        </li>
-
-                                        <li class="menu-item">
-                                            <a title="Manage Home Category"
-                                                href="{{route('admin.homecategories')}}">Manage Home Categories</a>
-                                        </li>
-
-                                        <li class="menu-item">
-                                            <a title="Sale Setting"
-                                                href="{{route('admin.sale')}}">Sale Setting</a>
-                                        </li>
-
-                                        <li class="menu-item">
-                                            <a title="All coupons"
-                                                href="{{route('admin.coupons')}}">All Coupons</a>
-                                        </li>
- --}}
-                                        <li class="menu-item">
-                                            <a href="{{ route('logout')}}"
-                                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
-                                        </li>
-
-                                        <form id="logout-form" method="POST" action="{{route('logout')}}">
-                                            @csrf
-                                        </form>
-
-
-                                    </ul>
                                 </li>
 
-                                @else
-                                <li class="menu-item menu-item-has-children parent">
-                                    <a title="" href="#"> My Account {{Auth::user()->name}}<i class="fa fa-angle-down"
-                                            aria-hidden="true"></i></a>
-                                    <ul class="submenu curency">
-                                        <li class="menu-item">
-                                            <a title="" href="{{route('user.dashboard')}}">Dashboard</a>
-                                        </li>
-
-                                        <li class="menu-item">
-                                            <a href="{{ route('logout')}}"
-                                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
-
-                                        </li>
-
-                                        <form id="logout-form" method="POST" action="{{route('logout')}}">
-                                            @csrf
-                                        </form>
-
-
-                                    </ul>
+                                <li class="menu-item">
+                                    <a title="Admin Products" href="{{route('admin.products')}}"> All
+                                        Products</a>
                                 </li>
 
-                                @endif
-                                @else
-                                <li class="menu-item"><a title="Register or Login" href="{{'login'}}">Login</a></li>
-                                <li class="menu-item"><a title="Register or Login" href="{{'register'}}">Register</a>
+                                <li class="menu-item">
+                                    <a title="Admin Sliders" href="{{route('admin.homeslider')}}">Manage Home
+                                        Sliders</a>
                                 </li>
 
-                                @endif
+                                <li class="menu-item">
+                                    <a title="Manage Home Category" href="{{route('admin.homecategories')}}">Manage Home
+                                        Categories</a>
+                                </li>
 
-                                @endif
+                                <li class="menu-item">
+                                    <a title="Sale Setting" href="{{route('admin.sale')}}">Sale Setting</a>
+                                </li>
+
+                                <li class="menu-item">
+                                    <a title="All coupons" href="{{route('admin.coupons')}}">All Coupons</a>
+                                </li>--}}
+                                <li class="menu-item">
+                                    <a href="{{ route('logout')}}"
+                                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                                </li>
+
+                                <form id="logout-form" method="POST" action="{{route('logout')}}">
+                                    @csrf
+                                </form>
+
+
+                            </ul>
+                            </li>
+
+                            @else
+                            <li class="menu-item menu-item-has-children parent">
+                                <a title="" href="#"> My Account {{Auth::user()->name}}<i class="fa fa-angle-down"
+                                        aria-hidden="true"></i></a>
+                                <ul class="submenu curency">
+                                    <li class="menu-item">
+                                        <a title="" href="{{route('user.dashboard')}}">Dashboard</a>
+                                    </li>
+
+                                    <li class="menu-item">
+                                        <a href="{{ route('logout')}}"
+                                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+
+                                    </li>
+
+                                    <form id="logout-form" method="POST" action="{{route('logout')}}">
+                                        @csrf
+                                    </form>
+
+
+                                </ul>
+                            </li>
+
+                            @endif
+                            @else
+                            <li class="menu-item"><a title="Register or Login" href="{{'login'}}">Login</a></li>
+                            <li class="menu-item"><a title="Register or Login" href="{{'register'}}">Register</a>
+                            </li>
+
+                            @endif
+
+                            @endif
                             </ul>
                         </div>
                     </div>
@@ -189,7 +185,7 @@
                         <div class="wrap-icon right-section">
                             @livewire('wishlist-count-component')
                             @livewire('cart-count-component')
-                            
+
                             <div class="wrap-icon-section show-up-after-1024">
                                 <a href="#" class="mobile-navigation">
                                     <span></span>
@@ -551,8 +547,10 @@
         </div>
     </footer>
 
-    <script src="{{ asset('assets/js/jquery-1.12.4.minb8ff.js?ver=1.12.4') }}"></scr>
-    <script src="{{ asset('assets/js/jquery-ui-1.12.4.minb8ff.js?ver=1.12.4') }}"></script>
+    <script src="{{ asset('assets/js/jquery-1.12.4.minb8ff.js?ver=1.12.4') }}">
+        </scr>
+    <script src="{{ asset('assets/js/jquery-ui-1.12.4.minb8ff.js?ver=1.12.4') }}">
+    </script>
     <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('assets/js/jquery.flexslider.js') }}"></script>
     {{--     <script src="{{ asset('assets/js/chosen.jquery.min.js') }}"></script> --}}
@@ -561,10 +559,18 @@
     <script src="{{ asset('assets/js/jquery.sticky.js') }}"></script>
     <script src="{{ asset('assets/js/functions.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js" integrity="sha512-GDey37RZAxFkpFeJorEUwNoIbkTwsyC736KNSYucu1WJWFK9qTdzYub8ATxktr6Dwke7nbFaioypzbDOQykoRg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.7.0/nouislider.min.js" integrity="sha512-jWNpWAWx86B/GZV4Qsce63q5jxx/rpWnw812vh0RE+SBIo/mmepwOSQkY2eVQnMuE28pzUEO7ux0a5sJX91g8A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdn.tiny.cloud/1/w03gbl37vmo3a665k1z483rou3lbu8zvyrv38nn3cnpbiihl/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+        integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"
+        integrity="sha512-GDey37RZAxFkpFeJorEUwNoIbkTwsyC736KNSYucu1WJWFK9qTdzYub8ATxktr6Dwke7nbFaioypzbDOQykoRg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.7.0/nouislider.min.js"
+        integrity="sha512-jWNpWAWx86B/GZV4Qsce63q5jxx/rpWnw812vh0RE+SBIo/mmepwOSQkY2eVQnMuE28pzUEO7ux0a5sJX91g8A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.tiny.cloud/1/w03gbl37vmo3a665k1z483rou3lbu8zvyrv38nn3cnpbiihl/tinymce/5/tinymce.min.js"
+        referrerpolicy="origin"></script>
     @livewireScripts
     @stack('scripts')
 </body>
