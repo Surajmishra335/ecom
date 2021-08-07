@@ -94,6 +94,9 @@
                                         <li class="menu-item">
                                             <a title="Dashboard" href="{{route('admin.dashboard')}}">Dashboard</a>
                                         </li>
+                                        <li class="menu-item">
+                                            <a title="Dashboard" href="{{route('admin.dashboard')}}">Dashboard</a>
+                                        </li>
 
                                         {{-- <li class="menu-item">
                                             <a title="Admin Categories"
@@ -142,6 +145,10 @@
                                 <ul class="submenu curency">
                                     <li class="menu-item">
                                         <a title="" href="{{route('user.dashboard')}}">Dashboard</a>
+                                    </li>
+
+                                    <li class="menu-item">
+                                        <a title="My Orders" href="{{route('user.orders')}}">My Orders</a>
                                     </li>
 
                                     <li class="menu-item">
