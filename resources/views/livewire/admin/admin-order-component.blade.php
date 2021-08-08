@@ -18,6 +18,11 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="panel panel-default">
+                                        @if(Session::has('order_message'))
+                                        <div class="alert alert-success" role="alert">
+                                            {{Session::get('order_message')}}
+                                        </div>
+                                        @endif
                                         <div class="panel-heading">
                                             All Orders
                                         </div>
@@ -37,7 +42,8 @@
                                                         <th>Zipcode</th>
                                                         <th>Status</th>
                                                         <th>Order Date</th>
-                                                        <th>Actions</th>
+                                                        <th colspan="2" class="text-center">Actions</th>
+
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -58,6 +64,22 @@
                                                         <td><a href="{{route('admin.orderdetails',['order_id' => $order->id])}}"
                                                                 class="btn btn-info btn-sm">Details
                                                             </a>
+                                                        </td>
+                                                        <td>
+                                                            <div class="dropdown">
+                                                                <button data-toggle="dropdown"
+                                                                    class="btn btn-success dropdown-toggle"
+                                                                    type="button">Status <span class="caret"></span>
+                                                                </button>
+                                                                <ul role="menu" class="dropdown-menu">
+                                                                    <li><a href="#"
+                                                                            wire:click.prevent="updateOrderStatus({{$order->id}},'delivered')">Delivered</a>
+                                                                    </li>
+                                                                    <li><a href="#"
+                                                                            wire:click.prevent="updateOrderStatus({{$order->id}},'canceled')">Canceled</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
                                                         </td>
 
                                                     </tr>
