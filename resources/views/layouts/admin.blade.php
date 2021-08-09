@@ -111,6 +111,11 @@
                     <li><a href="{{route('admin.contact')}}">All Contact Message</a></li>
                   </ul>
                 </li>
+                <li><a><i class="fa fa-edit"></i> Site Setting <span class="fa fa-chevron-down"></span></a>
+                  <ul class="nav child_menu">
+                    <li><a href="{{route('admin.settings')}}">All Settings</a></li>
+                  </ul>
+                </li>
                 <li><a><i class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>
                   <ul class="nav child_menu">
                     <li><a href="form.html">General Form</a></li>
