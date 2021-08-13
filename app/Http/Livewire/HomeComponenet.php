@@ -2,12 +2,14 @@
 
 namespace App\Http\Livewire;
 
-use App\Models\Category;
-use App\Models\HomeCategory;
-use App\Models\HomeSlider;
-use App\Models\Product;
 use App\Models\Sale;
+use App\Models\Product;
 use Livewire\Component;
+use App\Models\Category;
+use App\Models\HomeSlider;
+use App\Models\HomeCategory;
+use Illuminate\Support\Facades\Auth;
+use Cart;
 
 class HomeComponenet extends Component
 {
@@ -28,6 +30,11 @@ class HomeComponenet extends Component
         $sproducts = Product::where('sale_price', '>', 0)->inRandomOrder()->get()->take(8);
 
         $sale = Sale::find(1);
+
+        if (Auth::check()) {
+            
+            Cart::instance('cart')->restore(Auth::user()->email);
+        }
 
 
 
