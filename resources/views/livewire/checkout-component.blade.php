@@ -23,7 +23,7 @@
             </ul>
         </div>
         <div class=" main-content-area">
-            <form wire:submit.prevent="placeOrder">
+            <form wire:submit.prevent="placeOrder" onsubmit="$('#processing').show();">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="wrap-address-billing">
@@ -237,6 +237,15 @@
                         <p class="summary-info grand-total"><span>Grand Total</span> <span class="grand-total-price">₹
                                 {{Session::get('checkout')['total']}}</span></p>
 
+                        @endif
+                        
+                        @if ($errors->isEmpty())
+                            
+                        
+                        <div style="font-size: 22px; margin-bottom:20px; padding-left:37px; color:green; Display: none" id="processing" wire:ignore>
+                            <i class="fa fa-spinner fa-pulse fa-fw"></i>
+                            <span>Processing...</span>
+                        </div>
                         @endif
                         <button class="btn btn-medium" type="submit">Place order now</button>
                     </div>
